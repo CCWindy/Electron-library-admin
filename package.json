@@ -1,0 +1,36 @@
+{
+  "name": "electron-library-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "Electron-library-admin",
+    "productName": "ElectronLibraryAdmin",
+    "files": [
+      "node_modules/",
+      "src/index.html",
+      "main/",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    }
+  },
+  "devDependencies": {
+    "electron": "^7.1.9",
+    "electron-builder": "^21.2.0"
+  }
+}
