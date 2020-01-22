@@ -2,9 +2,10 @@
   "name": "electron-library-admin",
   "version": "1.0.0",
   "description": "Library management system for administrator, a electron project developed by React. ",
-  "main": "main/main.js",
+  "main": "main/main.prod.js",
   "scripts": {
-    "start:electron": "electron .",
+    "dev": "webpack-dev-server --config ./config/webpack.electron.dev.config.js",
+    "start:electron": "electron ./main/main.dev.js",
     "start": "webpack-dev-server --config ./config/webpack.dev.config.js",
     "build": "webpack --config ./config/webpack.prod.config.js",
     "lint": "eslint **/*.{ts,tsx,js,jsx}",
@@ -18,7 +19,7 @@
     "files": [
       "node_modules/",
       "dist/",
-      "main/",
+      "main/main.prod.js",
       "package.json"
     ],
     "win": {

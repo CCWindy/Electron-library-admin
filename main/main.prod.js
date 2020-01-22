@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 
 // 保持对 window 对象的全局引用，如果不这么做的话，当 JavaScript 对象被
 // 垃圾回收的时候，window 对象将会自动的关闭
@@ -14,8 +14,17 @@ function createWindow() {
     },
   });
 
+  globalShortcut.register('f5', function() {
+    console.log('f5 is pressed');
+    win.reload();
+  });
+  globalShortcut.register('CommandOrControl+R', function() {
+    console.log('CommandOrControl+R is pressed');
+    win.reload();
+  });
+
   // 加载 index.html 文件
-  win.loadFile('dist/index.html');
+  win.loadURL('dist/index.html');
 
   // 打开开发者工具
   win.webContents.openDevTools();
