@@ -6,3 +6,4 @@ dist
 
 // package
 release
+package-lock.json
